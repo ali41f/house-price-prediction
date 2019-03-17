@@ -1,7 +1,7 @@
 <template>
   <div class="row mt-5" v-if="this.searchProperties">
     <div class="col-12">
-      <div class="card">
+      <div class="card" v-if="this.searchProperties.total">
         <div class="card-header">
           <h3 class="card-title">Properties from our database</h3>
         </div>
@@ -33,6 +33,7 @@
         </div>
       </div>
       <!-- /.card -->
+      <h3 v-if="!this.searchProperties.total">No record found</h3>
     </div>
   </div>
 </template>

@@ -2926,6 +2926,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2990,6 +2991,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -64673,55 +64675,63 @@ var render = function() {
   return this.searchProperties
     ? _c("div", { staticClass: "row mt-5" }, [
         _c("div", { staticClass: "col-12" }, [
-          _c("div", { staticClass: "card" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body table-responsive p-0" }, [
-              _c("table", { staticClass: "table table-hover" }, [
-                _c(
-                  "tbody",
-                  [
-                    _vm._m(1),
-                    _vm._v(" "),
-                    _vm._l(_vm.searchProperties.data, function(property) {
-                      return _c("tr", { key: property.id }, [
-                        _c("td", [_vm._v(_vm._s(property.id))]),
+          this.searchProperties.total
+            ? _c("div", { staticClass: "card" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body table-responsive p-0" }, [
+                  _c("table", { staticClass: "table table-hover" }, [
+                    _c(
+                      "tbody",
+                      [
+                        _vm._m(1),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(property.propertylocation))]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(_vm._s(_vm.utf8Decode(property.descr)))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(_vm._s(_vm.utf8Decode(property.price)))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c("a", { attrs: { href: property.source } }, [
-                            _vm._v("Source")
+                        _vm._l(_vm.searchProperties.data, function(property) {
+                          return _c("tr", { key: property.id }, [
+                            _c("td", [_vm._v(_vm._s(property.id))]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _vm._v(_vm._s(property.propertylocation))
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _vm._v(_vm._s(_vm.utf8Decode(property.descr)))
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _vm._v(_vm._s(_vm.utf8Decode(property.price)))
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _c("a", { attrs: { href: property.source } }, [
+                                _vm._v("Source")
+                              ])
+                            ])
                           ])
-                        ])
-                      ])
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "card-footer" },
+                  [
+                    _c("pagination", {
+                      attrs: { data: _vm.searchProperties, limit: 5 },
+                      on: { "pagination-change-page": _vm.getResults }
                     })
                   ],
-                  2
+                  1
                 )
               ])
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "card-footer" },
-              [
-                _c("pagination", {
-                  attrs: { data: _vm.searchProperties, limit: 5 },
-                  on: { "pagination-change-page": _vm.getResults }
-                })
-              ],
-              1
-            )
-          ])
+            : _vm._e(),
+          _vm._v(" "),
+          !this.searchProperties.total
+            ? _c("h3", [_vm._v("No record found")])
+            : _vm._e()
         ])
       ])
     : _vm._e()
@@ -64870,7 +64880,17 @@ var render = function() {
         ])
       : _vm._e(),
     _vm._v(" "),
-    !_vm.$gate.isAdminOrAuthor() ? _c("div", [_c("not-found")], 1) : _vm._e(),
+    !_vm.$gate.isAdminOrAuthor()
+      ? _c(
+          "div",
+          [
+            _c("h2", [_vm._v("You are not allowed to access users")]),
+            _vm._v(" "),
+            _c("not-found")
+          ],
+          1
+        )
+      : _vm._e(),
     _vm._v(" "),
     _c(
       "div",

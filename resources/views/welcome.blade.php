@@ -90,8 +90,8 @@
             <div class="links">
                 <a href="/regression">Regressional Analysis</a>
                 <a href="/regression">Search Our Data</a>
-                <a href="/users">Search Our Data</a>
-                <a href="#">GitHub</a>
+                <a href="/users">Users Management</a>
+                <a href="https://github.com/ali41f/house-price-prediction">GitHub</a>
             </div>
         </div>
     </div>

@@ -52,6 +52,7 @@
       </div>
     </div>
     <div v-if="!$gate.isAdminOrAuthor()">
+      <h2>You are not allowed to access users</h2>
       <not-found></not-found>
     </div>
 
