@@ -175,6 +175,11 @@ export default {
         this.users = response.data;
       });
     },
+    loadUsers() {
+      if (this.$gate.isAdminOrAuthor()) {
+        axios.get("api/user").then(({ data }) => (this.users = data));
+      }
+    },
     updateUser() {
       this.$Progress.start();
       this.form
@@ -204,11 +209,6 @@ export default {
       this.form.reset();
       $("#AddNew").modal("show");
       this.form.fill(user);
-    },
-    loadUsers() {
-      if (this.$gate.isAdminOrAuthor()) {
-        axios.get("api/user").then(({ data }) => (this.users = data));
-      }
     },
     deleteUser(id) {
       Swal.fire({
@@ -262,6 +262,7 @@ export default {
     this.loadUsers();
     //this.getResults();
     //setInterval(() => this.loadUsers(), 3000);
+    /*
     Fire.$on("searching", () => {
       let query = this.$parent.search;
       axios
@@ -274,6 +275,7 @@ export default {
     Fire.$on("AfterCreated", () => {
       this.loadUsers();
     });
+    */
   }
 };
 </script>

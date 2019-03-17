@@ -24,8 +24,8 @@ Vue.use(VueRouter);
 
 let routes = [
     {
-        path: "/dashboard",
-        component: require("./components/Dashboard.vue").default
+        path: "/regression",
+        component: require("./components/Regression.vue").default
     },
     {
         path: "/developer",
@@ -67,7 +67,7 @@ Vue.filter("myDate", function(created) {
 Vue.use(VueProgressBar, {
     color: "rgb(143, 255, 199)",
     failedColor: "red",
-    height: "2px"
+    height: "4px"
 });
 
 const Toast = Swal.mixin({
@@ -96,6 +96,7 @@ Vue.component(
 );
 
 Vue.component("not-found", require("./components/NotFound.vue").default);
+Vue.component("search", require("./components/SearchProperties.vue").default);
 
 Vue.component("pagination", require("laravel-vue-pagination"));
 /**

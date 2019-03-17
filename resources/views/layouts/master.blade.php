@@ -11,7 +11,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Multi purpose | Starter</title>
+    <title>House price prediction</title>
 
     <link rel="stylesheet" href="/css/app.css">
 
@@ -27,24 +27,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="/home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
-                </li>
             </ul>
 
             <!-- SEARCH FORM -->
-                <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" @keyup.enter="searchit" v-model="search" type="search" placeholder="Search"
-                        aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-navbar" @click.prevent="searchit">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
+            <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" @keyup.enter="searchit" v-model="search" type="search"
+                    placeholder="Search properties from our database.." aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-navbar" @click.prevent="searchit">
+                        <i class="fa fa-search"></i>
+                    </button>
                 </div>
+            </div>
 
         </nav>
         <!-- /.navbar -->
@@ -52,10 +46,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="/home" class="brand-link">
+            <a href="/regression" class="brand-link">
+                <!--
                 <img src="./img/logo.png" alt="Multi Logo" class="brand-image img-circle elevation-3"
                     style="opacity: .8">
-                <span class="brand-text font-weight-light">Multi starter</span>
+                    -->
+                <span class="brand-text font-weight-light">House price prediction</span>
             </a>
 
             <!-- Sidebar -->
@@ -66,7 +62,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <img src="./img/profile.png" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">{{Auth::user()->name}}</a>
+                        <a href="/" class="d-block">{{Auth::user()->name}}</a>
                     </div>
                 </div>
 
@@ -77,35 +73,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <router-link to="/dashboard" class="nav-link">
+                            <router-link to="/regression" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Dashboard
+                                    Predict Price
                                 </p>
                             </router-link>
                         </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fa fa-cog"></i>
+                        <li class="nav-item">
+                            <router-link to="/users" class="nav-link">
+                                <i class="nav-icon fas fa-users nav-icon"></i>
                                 <p>
-                                    Management
-                                    <i class="right fas fa-angle-left"></i>
+                                    Users
                                 </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <router-link to="/users" class="nav-link">
-                                        <i class="fas fa-users nav-icon"></i>
-                                        <p>Users</p>
-                                    </router-link>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="fa fa-circle-o nav-icon"></i>
-                                        <p>Inactive Page</p>
-                                    </a>
-                                </li>
-                            </ul>
+                            </router-link>
                         </li>
                         @can('isAdmin')
                         <li class="nav-item">
@@ -127,8 +108,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
                         <li class="nav-item">
 
-                            <a class="nav-link" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
+                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                                 <i class="nav-icon fa fa-power-off"></i>
                                 <p>{{ __('Logout') }}</p>
@@ -152,6 +132,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Main content -->
             <div class="content">
                 <div class="container-fluid">
+                    <div class="container">
+                        <search></search>
+                    </div>
                     <router-view></router-view>
                     <vue-progress-bar></vue-progress-bar>
                 </div><!-- /.container-fluid -->
@@ -166,10 +149,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <footer class="main-footer">
             <!-- To the right -->
             <div class="float-right d-none d-sm-inline">
-                Anything you want
+                Made with Passion
             </div>
             <!-- Default to the left -->
-            <strong> <a href="http://ali.gofresh.today">Ali Rehman</a>.</strong> All rights reserved.
+            <strong> <a href="http://ali.gofresh.today">Project by Ali Rehman and Marij Hameed Khan</a>.</strong>
         </footer>
     </div>
     <!-- ./wrapper -->

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="row justify-content-center mt-3">
+    <div class="row justify-content-center mt-5">
       <div class="col-md-10">
         <h3>Page not found</h3>
         <svg
