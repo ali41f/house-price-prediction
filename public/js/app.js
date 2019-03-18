@@ -2810,7 +2810,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2976,6 +2975,9 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return output;
+    },
+    unescapeHTML: function unescapeHTML(escapedHTML) {
+      return escapedHTML.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
     }
   }
 });
@@ -63467,7 +63469,7 @@ var render = function() {
                           _vm._v("I-10")
                         ]),
                         _vm._v(" "),
-                        _c("option", { attrs: { value: "640" } }, [
+                        _c("option", { attrs: { value: "695" } }, [
                           _vm._v("G-13")
                         ]),
                         _vm._v(" "),
@@ -63691,8 +63693,6 @@ var render = function() {
                         }
                       },
                       [
-                        _c("option", { attrs: { value: "2" } }, [_vm._v("2")]),
-                        _vm._v(" "),
                         _c("option", { attrs: { value: "3" } }, [_vm._v("3")]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "4" } }, [_vm._v("4")]),
@@ -63837,9 +63837,7 @@ var render = function() {
                         }
                       },
                       [
-                        _c("option", { attrs: { value: "1", selected: "" } }, [
-                          _vm._v("1")
-                        ]),
+                        _c("option", { attrs: { value: "1" } }, [_vm._v("1")]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "2" } }, [_vm._v("2")]),
                         _vm._v(" "),
@@ -64695,11 +64693,23 @@ var render = function() {
                             ]),
                             _vm._v(" "),
                             _c("td", [
-                              _vm._v(_vm._s(_vm.utf8Decode(property.descr)))
+                              _vm._v(
+                                _vm._s(
+                                  _vm.unescapeHTML(
+                                    _vm.utf8Decode(property.descr)
+                                  )
+                                )
+                              )
                             ]),
                             _vm._v(" "),
                             _c("td", [
-                              _vm._v(_vm._s(_vm.utf8Decode(property.price)))
+                              _vm._v(
+                                _vm._s(
+                                  _vm.unescapeHTML(
+                                    _vm.utf8Decode(property.price)
+                                  )
+                                )
+                              )
                             ]),
                             _vm._v(" "),
                             _c("td", [

@@ -33,7 +33,7 @@ class PropertyController extends Controller
         $uSize = intval($request->size);
         $uBedrooms = intval($request->bedrooms);
         $uBathrooms = intval($request->bathrooms);
-        $uKitchen = intval($request->kitchen);
+        $uKitchen = intval($request->kitchens);
         $uImportedkitchen = intval($request->importedkitchen);
         $uSwimmingpool = intval($request->swimmingpool);
         $uGym = intval($request->gym);
@@ -42,6 +42,7 @@ class PropertyController extends Controller
         $uServantquarters = intval($request->servantquarters);
         $uBuild = intval($request->build);
         $uGarden = intval($request->garden);
+
 
 
 
@@ -125,7 +126,7 @@ class PropertyController extends Controller
                         $sectornum = 660;
                         break;
                     case "g13":
-                        $sectornum = 640;
+                        $sectornum = 695;
                         break;
                     case "g14":
                         $sectornum = 620;
@@ -198,8 +199,8 @@ class PropertyController extends Controller
 
                     $Floors = intval($record['Floors']);
 
-                    if($record['Imported Kitchen'] == "Yes") $ImportedKitchen = 1;
-                    else $ImportedKitchen = 0;
+                    if($record['Imported Kitchen'] == "Yes") $ImportedKitchen = 0;
+                    else $ImportedKitchen = 1;
 
                     if($record['Corner Plot'] == "Yes") $CornerPlot = 1;
                     else $CornerPlot = 0;
@@ -211,15 +212,15 @@ class PropertyController extends Controller
                     $baths = intval($record['baths']);
                     $size = intval($record['h_size']);
                     
-                    if($record['Jacuzzi'] == "Yes") $jacuzzi = 1;
-                    else $jacuzzi = 0;
+                    if($record['Jacuzzi'] == "Yes") $jacuzzi = 0;
+                    else $jacuzzi = 1;
 
                     if($record['bdate'] == "new") $build = 2;
                     elseif($record['bdate'] == "old") $build = 0;
                     else $build = 1;
 
-                    if($record['Garden'] == "Yes") $garden = 1;
-                    else $garden = 0;
+                    if($record['Garden'] == "Yes") $garden = 0;
+                    else $garden = 1;
 
                     
 

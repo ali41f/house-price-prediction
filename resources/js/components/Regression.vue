@@ -34,7 +34,7 @@
                     <option value="700">G-10</option>
                     <option value="680">G-11</option>
                     <option value="660">I-10</option>
-                    <option value="640">G-13</option>
+                    <option value="695">G-13</option>
                     <option value="620">G-14</option>
                     <option value="600">G-15</option>
 
@@ -81,7 +81,6 @@
                 <div class="form-group col-md-4">
                   <label>Bedrooms</label>
                   <select class="form-control" v-model="form.bedrooms" name="bedrooms">
-                    <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
@@ -116,7 +115,7 @@
                 <div class="form-group col-md-4">
                   <label>Kitchens</label>
                   <select class="form-control" v-model="form.kitchens" name="kitchens">
-                    <option value="1" selected>1</option>
+                    <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                   </select>

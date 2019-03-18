@@ -18,8 +18,8 @@
               <tr v-for="property in searchProperties.data" :key="property.id">
                 <td>{{property.id}}</td>
                 <td>{{property.propertylocation}}</td>
-                <td>{{utf8Decode(property.descr)}}</td>
-                <td>{{utf8Decode(property.price)}}</td>
+                <td>{{unescapeHTML(utf8Decode(property.descr))}}</td>
+                <td>{{unescapeHTML(utf8Decode(property.price))}}</td>
                 <td>
                   <a :href="property.source">Source</a>
                 </td>
@@ -84,6 +84,12 @@ export default {
         }
       }
       return output;
+    },
+    unescapeHTML(escapedHTML) {
+      return escapedHTML
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&amp;/g, "&");
     }
   }
 };
